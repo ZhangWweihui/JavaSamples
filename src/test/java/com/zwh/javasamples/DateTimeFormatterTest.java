@@ -1,8 +1,11 @@
 package com.zwh.javasamples;
 
 import java.text.ParseException;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -15,12 +18,35 @@ public class DateTimeFormatterTest {
 
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
+    /**
+     * 从 Date --> Instant --> LocalDateTime --> String
+     *
+     * @param date
+     * @return
+     */
+    public static String formatDate(Date date) {
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault());
+        return formatter.format(localDateTime);
+    }
+
     public static String formatDate2(LocalDateTime date) {
         return formatter.format(date);
     }
 
     public static LocalDateTime parse2(String dateNow) {
         return LocalDateTime.parse(dateNow, formatter);
+    }
+
+    /**
+     * 从 String--> LocalDateTime --> Instant --> Date
+     *
+     * @param dateStr
+     * @return
+     */
+    public static Date parse(String dateStr) {
+        LocalDateTime localDateTime = LocalDateTime.parse(dateStr, formatter);
+        Instant instant = localDateTime.atZone(ZoneId.systemDefault()).toInstant();
+        return Date.from(instant);
     }
 
     public static void main(String[] args) throws InterruptedException, ParseException {
