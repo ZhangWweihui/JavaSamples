@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="policyInfoProducer" class="org.apache.rocketmq.client.producer.DefaultMQProducer"
+          init-method="start">
+        <property name="namesrvAddr" value="172.18.20.37:9876;172.18.20.47:9876"/>
+        <property name="producerGroup" value="policy_info_producers" />
+        <property name="sendMsgTimeout" value="3000"/>
+        <property name="instanceName" value="hshcics_policy_info_producer"/>
+    </bean>
+
+    <bean id="policyInfoConsumer1" class="org.apache.rocketmq.client.consumer.DefaultMQPushConsumer">
+        <property name="namesrvAddr" value="172.18.20.37:9876;172.18.20.47:9876"/>
+        <property name="consumerGroup" value="policy_info_consumers" />
+        <property name="instanceName" value="policyInfoConsumer1"/>
+    </bean>
+
+    <bean id="policyInfoConsumer2" class="org.apache.rocketmq.client.consumer.DefaultMQPushConsumer">
+        <property name="namesrvAddr" value="172.18.20.37:9876;172.18.20.47:9876"/>
+        <property name="consumerGroup" value="policy_info_consumers" />
+        <property name="instanceName" value="policyInfoConsumer2"/>
+    </bean>
+</beans>
