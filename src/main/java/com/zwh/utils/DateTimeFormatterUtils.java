@@ -1,4 +1,4 @@
-package com.zwh.javasamples;
+package com.zwh.utils;
 
 import java.text.ParseException;
 import java.time.Instant;
@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * @author ZhangWeihui
  * @date 2019/6/11 18:29
  */
-public class DateTimeFormatterTest {
+public class DateTimeFormatterUtils {
 
     private static final DateTimeFormatter YMDHMS = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private static final DateTimeFormatter YMD = DateTimeFormatter.ofPattern("yyyy-MM-dd");
