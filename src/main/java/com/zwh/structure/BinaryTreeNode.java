@@ -6,7 +6,7 @@ import cn.hutool.core.lang.Assert;
  * @author ZhangWeihui
  * @date 2019/8/5 14:28
  */
-public class BinaryTreeNode<T> {
+public class BinaryTreeNode<T extends Comparable> {
 
     private T data;
     private BinaryTreeNode left;

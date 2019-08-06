@@ -11,9 +11,9 @@ import java.util.List;
  * @author ZhangWeihui
  * @date 2019/8/5 14:30
  */
-public class LinkedBinaryTree<T> {
+public class LinkedBinaryTree<T extends Comparable> {
 
-    private BinaryTreeNode root;
+    protected BinaryTreeNode root;
     private List<T> datas;
 
     public LinkedBinaryTree(BinaryTreeNode root){
