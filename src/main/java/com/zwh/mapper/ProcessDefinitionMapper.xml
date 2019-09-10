@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zwh.mapper.ProcessDefinitionMapper" >
+
+    <select id="query" parameterType="map" resultType="ProcessDefinitionVO">
+        select
+          p.ID_,
+          p.CATEGORY_,
+          p.NAME_,
+          p.KEY_,
+          p.VERSION_,
+          p.DEPLOYMENT_ID_,
+          p.RESOURCE_NAME_ resource,
+          p.DGRM_RESOURCE_NAME_ diagramResource,
+          p.DESCRIPTION_,
+          p.TENANT_ID_,
+          d.NAME_ deploymentName,
+          d.DEPLOY_TIME_ deploymentTime
+        from
+            ACT_RE_PROCDEF p left join ACT_RE_DEPLOYMENT d on p.DEPLOYMENT_ID_ = d.ID_
+        <where>
+            1=1
+            <if test="nameLike!=null and nameLike!=''">
+               and p.NAME_ like #{nameLike}
+            </if>
+            <if test="keyLike!=null and keyLike!=''">
+                and p.KEY_ like #{keyLike}
+            </if>
+        </where>
+        order by d.DEPLOY_TIME_ desc
+    </select>
+
+</mapper>
