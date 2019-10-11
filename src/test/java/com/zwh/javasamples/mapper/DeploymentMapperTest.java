@@ -1,10 +1,9 @@
 package com.zwh.javasamples.mapper;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.zwh.mapper.DeploymentMapper;
 import com.zwh.model.DeploymentVO;
-import com.zwh.utils.SqlSessionUtils;
+import com.zwh.utils.SqlSessionFactoryUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -21,7 +20,7 @@ public class DeploymentMapperTest {
 
     @BeforeClass
     public static void setup() throws Exception {
-        SqlSession sqlSession = SqlSessionUtils.create();
+        SqlSession sqlSession = SqlSessionFactoryUtils.create().openSession();
         mapper = sqlSession.getMapper(DeploymentMapper.class);
     }
 

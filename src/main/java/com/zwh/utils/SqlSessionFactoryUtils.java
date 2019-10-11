@@ -28,11 +28,12 @@ import java.util.Set;
  * @date 2019/9/9 16:03
  */
 @Slf4j
-public class SqlSessionUtils {
+public class SqlSessionFactoryUtils {
+
+    private static SqlSessionFactory sqlSessionFactory;
 
     public static void main(String[] args) {
-        try {
-            SqlSession sqlSession = create();
+        try (SqlSession sqlSession = create().openSession()){
             ProcessDefinitionMapper processDefinitionMapper = sqlSession.getMapper(ProcessDefinitionMapper.class);
             List<ProcessDefinitionVO> processDefinitionVOS = processDefinitionMapper.query(new HashMap<>());
             log.info("processDefinitionVOS = {}", JSON.toJSONString(processDefinitionVOS));
@@ -47,25 +48,37 @@ public class SqlSessionUtils {
         }
     }
 
-    public static SqlSession createByXML() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-        return sqlSessionFactory.openSession();
+    public static SqlSessionFactory createByXml() throws IOException {
+        if(sqlSessionFactory == null) {
+            synchronized (SqlSessionFactoryUtils.class) {
+                if (sqlSessionFactory == null) {
+                    InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+                    sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+                }
+            }
+        }
+        return sqlSessionFactory;
     }
 
-    public static SqlSession create() throws SQLException,IOException,ClassNotFoundException{
-        DataSource dataSource = getDruidDataSource();
-        TransactionFactory transactionFactory = new JdbcTransactionFactory();
-        Environment environment = new Environment("development", transactionFactory, dataSource);
-        Configuration configuration = new Configuration(environment);
-        configuration.setMapUnderscoreToCamelCase(true);
-        configuration.getTypeAliasRegistry().registerAliases("com.zwh.model");
-        Set<Class<?>> mappers = FindClassUtils.getClassesInPackage("com.zwh.mapper");
-        if(!mappers.isEmpty()) {
-            mappers.forEach(m -> configuration.addMapper(m));
+    public static SqlSessionFactory create() throws SQLException,IOException,ClassNotFoundException{
+        if(sqlSessionFactory == null) {
+            synchronized (SqlSessionFactoryUtils.class) {
+                if(sqlSessionFactory == null) {
+                    DataSource dataSource = getDruidDataSource();
+                    TransactionFactory transactionFactory = new JdbcTransactionFactory();
+                    Environment environment = new Environment("development", transactionFactory, dataSource);
+                    Configuration configuration = new Configuration(environment);
+                    configuration.setMapUnderscoreToCamelCase(true);
+                    configuration.getTypeAliasRegistry().registerAliases("com.zwh.model");
+                    Set<Class<?>> mappers = FindClassUtils.getClassesInPackage("com.zwh.mapper");
+                    if (!mappers.isEmpty()) {
+                        mappers.forEach(m -> configuration.addMapper(m));
+                    }
+                    sqlSessionFactory = new SqlSessionFactoryBuilder().build(configuration);
+                }
+            }
         }
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(configuration);
-        return sqlSessionFactory.openSession();
+        return sqlSessionFactory;
     }
 
     private static DataSource getDruidDataSource() throws SQLException,IOException {
