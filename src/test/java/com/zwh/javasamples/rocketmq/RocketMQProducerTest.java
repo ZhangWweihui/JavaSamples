@@ -1,5 +1,7 @@
 package com.zwh.javasamples.rocketmq;
 
+import com.alibaba.fastjson.JSON;
+import com.zwh.utils.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.rocketmq.client.exception.MQBrokerException;
@@ -25,9 +27,8 @@ public class RocketMQProducerTest {
 
     public static final String TOPIC = "hshcics_policy_info";
     public static final String TAG = "sync_policy_infos";
-    public static final String NAMESRV = "172.18.20.37:9876;172.18.20.47:9876";
     private static final String INSTANCE_NAME = "hshcics_policy_info_producer";
-        private static final String GROUP_NAME = "policy_info_producers";
+    private static final String GROUP_NAME = "policy_info_producers";
 
     private DefaultMQProducer producer = null;
 
@@ -35,7 +36,7 @@ public class RocketMQProducerTest {
     public void init(){
         try {
             producer = new DefaultMQProducer(GROUP_NAME);
-            producer.setNamesrvAddr(NAMESRV);
+            producer.setNamesrvAddr(Constants.ROCKETMQ_NAMESRV);
             producer.setInstanceName(INSTANCE_NAME);
             producer.setSendMsgTimeout(3000);
             producer.setRetryTimesWhenSendFailed(2);
@@ -59,7 +60,7 @@ public class RocketMQProducerTest {
                 Message message = new Message(TOPIC, TAG, key, ("保险测试信息：policy_info_test_message_"+randomInt).getBytes(RemotingHelper.DEFAULT_CHARSET));
                 try {
                     SendResult sendResult = producer.send(message);
-                    log.info("producer send result status : {}", sendResult.getSendStatus());
+                    log.info("producer send result : {}", JSON.toJSONString(sendResult));
                 } catch (MQClientException e) {
                     e.printStackTrace();
                 } catch (RemotingException e) {

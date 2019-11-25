@@ -1,5 +1,6 @@
 package com.zwh.javasamples.rocketmq;
 
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.rocketmq.client.exception.MQBrokerException;
@@ -24,26 +25,23 @@ import java.util.UUID;
 @Slf4j
 public class RocketMQSpringProducerTest {
 
+    public static final String TOPIC = "artifact_info";
+    public static final String TAG = "test";
+
     @Test
     public void test(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:appContext.xml");
-        DefaultMQProducer producer = (DefaultMQProducer) applicationContext.getBean("policyInfoProducer");
+        DefaultMQProducer producer = (DefaultMQProducer) applicationContext.getBean("artifactProducer");
         Assert.assertNotNull(producer);
         try {
-            for(int i=0;i<8;i++){
+            for(int i=0;i<3;i++){
                 String key = UUID.randomUUID().toString().replace("-","");
                 int randomInt = RandomUtils.nextInt(1000,9999);
-                Message message = new Message(RocketMQProducerTest.TOPIC, RocketMQProducerTest.TAG, key, ("保险测试信息：policy_info_test_message_"+randomInt).getBytes(RemotingHelper.DEFAULT_CHARSET));
+                Message message = new Message(TOPIC, TAG, key, ("artifact_info_test_message_"+randomInt).getBytes(RemotingHelper.DEFAULT_CHARSET));
                 try {
                     SendResult sendResult = producer.send(message);
-                    log.info("producer send result status : {}", sendResult.getSendStatus());
-                } catch (MQClientException e) {
-                    e.printStackTrace();
-                } catch (RemotingException e) {
-                    e.printStackTrace();
-                } catch (MQBrokerException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
+                    log.info("producer send result : {}", JSON.toJSONString(sendResult));
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }

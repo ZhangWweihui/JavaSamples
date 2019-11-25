@@ -32,8 +32,8 @@ public class RocketMQSpringConsumer {
     @Before
     public void init(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:appContext.xml");
-        consumer1 = (DefaultMQPushConsumer) applicationContext.getBean("policyInfoConsumer1");
-        consumer2 = (DefaultMQPushConsumer) applicationContext.getBean("policyInfoConsumer2");
+        consumer1 = (DefaultMQPushConsumer) applicationContext.getBean("artifactConsumer1");
+        consumer2 = (DefaultMQPushConsumer) applicationContext.getBean("artifactConsumer2");
         Assert.assertNotNull(consumer1);
         Assert.assertNotNull(consumer2);
     }
@@ -41,34 +41,23 @@ public class RocketMQSpringConsumer {
     @Test
     public void test(){
         try {
-            consumer1.subscribe(RocketMQProducerTest.TOPIC, RocketMQProducerTest.TAG);
-            consumer1.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
-            consumer1.setMessageModel(MessageModel.CLUSTERING);
-            consumer1.registerMessageListener(new MessageListenerConcurrently() {
-                @Override
-                public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
+            consumer1.registerMessageListener((List<MessageExt> msgs, ConsumeConcurrentlyContext context) -> {
                     for (Message msg : msgs) {
                         String msgStr = new String(msg.getBody());
                         log.info("消费者1 获取结果为：{}", msgStr);
                     }
                     return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
-                }
             });
-            consumer1.start();
 
-            consumer2.subscribe(RocketMQProducerTest.TOPIC, RocketMQProducerTest.TAG);
-            consumer2.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
-            consumer2.setMessageModel(MessageModel.CLUSTERING);
-            consumer2.registerMessageListener(new MessageListenerConcurrently() {
-                @Override
-                public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
+            consumer2.registerMessageListener((List<MessageExt> msgs, ConsumeConcurrentlyContext context) -> {
                     for (Message msg : msgs) {
                         String msgStr = new String(msg.getBody());
                         log.info("消费者2 获取结果为：{}", msgStr);
                     }
                     return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
-                }
             });
+
+            consumer1.start();
             consumer2.start();
         } catch (MQClientException e) {
             e.printStackTrace();
