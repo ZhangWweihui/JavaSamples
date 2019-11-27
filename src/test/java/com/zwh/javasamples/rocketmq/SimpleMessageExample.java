@@ -152,7 +152,7 @@ public class SimpleMessageExample {
         consumer.setNamesrvAddr(Constants.ROCKETMQ_NAMESRV);
 
         // Subscribe one more more topics to consume.
-        consumer.subscribe(TOPIC, "*");
+        consumer.subscribe(Constants.TOPIC_ARTIFACT_INFO, "*");
         consumer.setInstanceName("artifactConsumer2");
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         consumer.setMessageModel(MessageModel.BROADCASTING);

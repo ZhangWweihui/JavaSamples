@@ -13,6 +13,7 @@ import java.util.List;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.common.protocol.heartbeat.MessageModel;
+import org.apache.rocketmq.remoting.common.RemotingHelper;
 import org.junit.Test;
 
 /**
@@ -23,18 +24,16 @@ import org.junit.Test;
  */
 public class ScheduleExample {
 
-    public static final String TOPIC = "TopicTest";
-
     @Test
     public void consume() throws Exception {
         // Instantiate message consumer
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("ScheduleExampleConsumer");
         consumer.setNamesrvAddr(Constants.ROCKETMQ_NAMESRV);
         // Subscribe topics
-        consumer.subscribe(TOPIC, "*");
+        consumer.subscribe(Constants.TOPIC_ARTIFACT_INFO, "*");
         consumer.setInstanceName("SEConsumer");
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
-        consumer.setMessageModel(MessageModel.CLUSTERING);
+        consumer.setMessageModel(MessageModel.BROADCASTING);//不知为何只能用广播模式消费
         // Register message listener
         consumer.registerMessageListener(new MessageListenerConcurrently() {
             @Override
@@ -66,14 +65,13 @@ public class ScheduleExample {
         producer.start();
         int totalMessagesToSend = 1;
         for (int i = 0; i < totalMessagesToSend; i++) {
-            Message message = new Message(TOPIC, ("Hello scheduled message " + i).getBytes());
+            Message message = new Message(Constants.TOPIC_ARTIFACT_INFO, ("Hello scheduled message " + i).getBytes(RemotingHelper.DEFAULT_CHARSET));
             // This message will be delivered to consumer 10 seconds later.
             message.setDelayTimeLevel(3);
             // Send the message
             SendResult sendResult = producer.send(message);
             System.out.println(JSON.toJSONString(sendResult));
         }
-
         // Shutdown producer after use.
         producer.shutdown();
     }
