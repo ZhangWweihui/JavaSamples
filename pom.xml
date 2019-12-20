@@ -138,6 +138,25 @@
             <artifactId>javassist</artifactId>
             <version>3.25.0-GA</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.openmessaging</groupId>
+            <artifactId>parent</artifactId>
+            <version>1.0.0-alpha</version>
+            <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>io.openmessaging</groupId>
+            <artifactId>openmessaging-api</artifactId>
+            <version>1.0.0-alpha</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.openmessaging</groupId>
+            <artifactId>openmessaging-admin</artifactId>
+            <version>1.0.0-alpha</version>
+        </dependency>
     </dependencies>
 
     <build>

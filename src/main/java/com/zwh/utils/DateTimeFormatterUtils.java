@@ -1,5 +1,7 @@
 package com.zwh.utils;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+
 import java.text.ParseException;
 import java.time.Instant;
 import java.time.LocalDate;
@@ -7,9 +9,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @author ZhangWeihui
@@ -81,7 +81,13 @@ public class DateTimeFormatterUtils {
     }
 
     public static void main(String[] args) throws InterruptedException, ParseException {
-        ExecutorService service = Executors.newFixedThreadPool(100);
+        //ExecutorService service = Executors.newFixedThreadPool(100);
+        ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("demo-pool-%d").build();
+        ExecutorService service = new ThreadPoolExecutor(5, 50,
+                0L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<Runnable>(1024), namedThreadFactory,
+                new ThreadPoolExecutor.AbortPolicy());
+
         // 20个线程
         for (int i = 0; i < 20; i++) {
             service.execute(() -> {
