@@ -1,54 +1,76 @@
-2019-02-01 18:58:23 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:23) ]
-INFO:/C:/IdeaProjects/JavaSamples/target/test-classes/article.txt
-2019-02-01 19:00:06 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:24) ]
-INFO:file:/C:/IdeaProjects/JavaSamples/target/test-classes/article.txt
-2019-02-01 19:00:07 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:29) ]
-INFO:count : 0
-2019-02-01 19:00:31 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:24) ]
-INFO:file:/C:/IdeaProjects/JavaSamples/target/test-classes/article.txt
-2019-02-01 19:00:31 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:29) ]
-INFO:count : 0
-2019-02-01 19:05:15 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:24) ]
-INFO:file:/C:/IdeaProjects/JavaSamples/target/test-classes/article.txt
-2019-02-01 19:05:15 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:29) ]
-INFO:count : 1
-2019-02-01 19:05:54 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:24) ]
-INFO:file:/C:/IdeaProjects/JavaSamples/target/test-classes/article.txt
-2019-02-01 19:05:54 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:28) ]
-INFO:[China, had, the, third, highest, number, of, think, tanks, in, the, world, according, to, a, report, on, global, think, tank, released, on, Thursday, With, think, tanks, China, ranked, third, in, the, list, of, countries, with, the, highest, number, of, think, tanks, the, Global, Go, To, Think, Tank, Index, Report, said, The, United, States, and, India, took, the, top, and, second, spots, on, the, list, with, and, think, tanks, respectively, the, report, by, the, Think, Tanks, and, Civil, Societies, Program, said, A, total, of, think, tanks, catalogued, in, the, TTCSP, s, Global, Think, Tank, Database, participated, in, the, nomination, and, ranking, process, with, from, Central, Europe, and, from, North, America, The, think, tank, establishment, rate, fell, in, the, US, and, Europe, during, the, past, years, although, the, global, list, is, still, dominated, by, Europe, and, the, US, the, report, said, Emerging, powers, in, Asia, grew, steadily, and, the, number, of, think, tank, in, this, area, rose, to, accounting, for, percent, of, the, world, s, total]
-2019-02-01 19:05:54 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:30) ]
-INFO:count : 1
-2019-02-01 19:10:05 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:24) ]
-INFO:file:/C:/IdeaProjects/JavaSamples/target/test-classes/article.txt
-2019-02-01 19:10:06 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:28) ]
-INFO:[,  ,  ,  , -,  ,  ,  ,  ,  ,  ,  , , ,  ,  ,  ,  ,  , 
-,  ,  ,  ,  , .
-
-,  507 ,  , , ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
-,  , , ,  2018 ,  ,  ,  ,  ,  ,  ,  , .
-
-,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  1,871 ,  509 , 
-, , , , ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , .
-
-,  ,  ,  8,162 ,  ,  ,  ,  ,  , ',  ,  ,  ,  ,  , 
-,  ,  ,  ,  ,  , , ,  2,219 ,  ,  ,  ,  1,972 ,  ,  , .
-
-,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  12 , , , 
-,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , , ,  ,  , .
-
-,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  1,829,
-,  ,  22.4 ,  ,  ,  , ',  , .]
-2019-02-01 19:10:06 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:30) ]
-INFO:count : 0
-2019-02-01 19:10:29 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:24) ]
-INFO:file:/C:/IdeaProjects/JavaSamples/target/test-classes/article.txt
-2019-02-01 19:10:29 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:28) ]
-INFO:[China, had, the, third, highest, number, of, think, tanks, in, the, world, according, to, a, report, on, global, think, tank, released, on, Thursday, With, think, tanks, China, ranked, third, in, the, list, of, countries, with, the, highest, number, of, think, tanks, the, Global, Go, To, Think, Tank, Index, Report, said, The, United, States, and, India, took, the, top, and, second, spots, on, the, list, with, and, think, tanks, respectively, the, report, by, the, Think, Tanks, and, Civil, Societies, Program, said, A, total, of, think, tanks, catalogued, in, the, TTCSP, s, Global, Think, Tank, Database, participated, in, the, nomination, and, ranking, process, with, from, Central, Europe, and, from, North, America, The, think, tank, establishment, rate, fell, in, the, US, and, Europe, during, the, past, years, although, the, global, list, is, still, dominated, by, Europe, and, the, US, the, report, said, Emerging, powers, in, Asia, grew, steadily, and, the, number, of, think, tank, in, this, area, rose, to, accounting, for, percent, of, the, world, s, total]
-2019-02-01 19:10:29 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:30) ]
-INFO:count : 1
-2019-02-01 19:11:18 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:24) ]
-INFO:file:/C:/IdeaProjects/JavaSamples/target/test-classes/article.txt
-2019-02-01 19:11:18 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:28) ]
-INFO:[China, had, the, third, highest, number, of, think, tanks, in, the, world, according, to, a, report, on, global, think, tank, released, on, Thursday, With, think, tanks, China, ranked, third, in, the, list, of, countries, with, the, highest, number, of, think, tanks, the, Global, Go, To, Think, Tank, Index, Report, said, The, United, States, and, India, took, the, top, and, second, spots, on, the, list, with, and, think, tanks, respectively, the, report, by, the, Think, Tanks, and, Civil, Societies, Program, said, A, total, of, think, tanks, catalogued, in, the, TTCSP, s, Global, Think, Tank, Database, participated, in, the, nomination, and, ranking, process, with, from, Central, Europe, and, from, North, America, The, think, tank, establishment, rate, fell, in, the, US, and, Europe, during, the, past, years, although, the, global, list, is, still, dominated, by, Europe, and, the, US, the, report, said, Emerging, powers, in, Asia, grew, steadily, and, the, number, of, think, tank, in, this, area, rose, to, accounting, for, percent, of, the, world, s, total]
-2019-02-01 19:11:18 下午 [Thread: main][ Class:com.zwh.javasamples.java8.StreamTest >> Method: com.zwh.javasamples.java8.StreamTest.test1(StreamTest.java:30) ]
-INFO:count : 3
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:zookeeper.version=3.5.5-390fe37ea45dee01bf87dc1c042b5e3dcce88653, built on 05/03/2019 12:07 GMT
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:host.name=admin-PC
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:java.version=1.8.0_171
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:java.vendor=Oracle Corporation
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:java.home=C:\Program Files\Java\jdk1.8.0_171\jre
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:java.class.path=C:\Program Files\Java\jdk1.8.0_171\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\rt.jar;F:\IdeaProjects\JavaSamples\target\classes;D:\mavenRepo\org\slf4j\slf4j-api\1.8.0-beta2\slf4j-api-1.8.0-beta2.jar;D:\mavenRepo\org\slf4j\slf4j-log4j12\1.8.0-beta2\slf4j-log4j12-1.8.0-beta2.jar;D:\mavenRepo\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\mavenRepo\org\freemarker\freemarker\2.3.28\freemarker-2.3.28.jar;D:\mavenRepo\commons-io\commons-io\2.4\commons-io-2.4.jar;D:\mavenRepo\org\apache\rocketmq\rocketmq-client\4.3.0\rocketmq-client-4.3.0.jar;D:\mavenRepo\org\apache\rocketmq\rocketmq-common\4.3.0\rocketmq-common-4.3.0.jar;D:\mavenRepo\org\apache\rocketmq\rocketmq-remoting\4.3.0\rocketmq-remoting-4.3.0.jar;D:\mavenRepo\com\alibaba\fastjson\1.2.29\fastjson-1.2.29.jar;D:\mavenRepo\org\apache\rocketmq\rocketmq-logging\4.3.0\rocketmq-logging-4.3.0.jar;D:\mavenRepo\io\netty\netty-tcnative-boringssl-static\1.1.33.Fork26\netty-tcnative-boringssl-static-1.1.33.Fork26.jar;D:\mavenRepo\org\apache\commons\commons-lang3\3.4\commons-lang3-3.4.jar;D:\mavenRepo\org\springframework\spring-context\5.1.1.RELEASE\spring-context-5.1.1.RELEASE.jar;D:\mavenRepo\org\springframework\spring-aop\5.1.1.RELEASE\spring-aop-5.1.1.RELEASE.jar;D:\mavenRepo\org\springframework\spring-expression\5.1.1.RELEASE\spring-expression-5.1.1.RELEASE.jar;D:\mavenRepo\org\springframework\spring-core\5.1.1.RELEASE\spring-core-5.1.1.RELEASE.jar;D:\mavenRepo\org\springframework\spring-jcl\5.1.1.RELEASE\spring-jcl-5.1.1.RELEASE.jar;D:\mavenRepo\org\springframework\spring-beans\5.1.1.RELEASE\spring-beans-5.1.1.RELEASE.jar;D:\mavenRepo\org\apache\poi\poi\3.15\poi-3.15.jar;D:\mavenRepo\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;D:\mavenRepo\org\apache\commons\commons-collections4\4.1\commons-collections4-4.1.jar;D:\mavenRepo\org\apache\poi\poi-ooxml\3.15\poi-ooxml-3.15.jar;D:\mavenRepo\org\apache\poi\poi-ooxml-schemas\3.15\poi-ooxml-schemas-3.15.jar;D:\mavenRepo\org\apache\xmlbeans\xmlbeans\2.6.0\xmlbeans-2.6.0.jar;D:\mavenRepo\stax\stax-api\1.0.1\stax-api-1.0.1.jar;D:\mavenRepo\com\github\virtuald\curvesapi\1.04\curvesapi-1.04.jar;D:\mavenRepo\cn\hutool\hutool-all\4.1.19\hutool-all-4.1.19.jar;D:\mavenRepo\org\apache\zookeeper\zookeeper\3.5.5\zookeeper-3.5.5.jar;D:\mavenRepo\org\apache\zookeeper\zookeeper-jute\3.5.5\zookeeper-jute-3.5.5.jar;D:\mavenRepo\org\apache\yetus\audience-annotations\0.5.0\audience-annotations-0.5.0.jar;D:\mavenRepo\io\netty\netty-all\4.1.29.Final\netty-all-4.1.29.Final.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2018.1.6\lib\idea_rt.jar
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:java.library.path=C:\Program Files\Java\jdk1.8.0_171\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files\Python37\Scripts\;C:\Program Files\Python37\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;D:\apache-maven-3.5.4\bin;C:\Go\bin;D:\tools\curl-7.64.0-win32-mingw\bin;C:\Program Files\Java\jdk1.8.0_171\bin;C:\Program Files\Java\jdk1.8.0_171\lib;C:\Users\admin\go\bin;C:\Program Files\JetBrains\GoLand 2018.3.3\bin;;.
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:java.io.tmpdir=C:\Users\admin\AppData\Local\Temp\
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:java.compiler=<NA>
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:os.name=Windows 7
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:os.arch=amd64
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:os.version=6.1
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:user.name=admin
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:user.home=C:\Users\admin
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:user.dir=F:\IdeaProjects\JavaSamples
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:os.memory.free=110MB
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:os.memory.max=1755MB
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.Environment.logEnv(Environment.java:109) ]
+INFO:Client environment:os.memory.total=119MB
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:868) ]
+INFO:Initiating client connection, connectString=47.104.103.95:2181,47.104.103.95:2182,47.104.103.95:2183 sessionTimeout=300000 watcher=com.zwh.utils.ZookeeperUtils$DemoWatcher@48533e64
+2019-08-23 15:00:13 下午 [Thread: main][ Class:org.apache.zookeeper.common.X509Util >> Method: org.apache.zookeeper.common.X509Util.<clinit>(X509Util.java:79) ]
+INFO:Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
+2019-08-23 15:00:14 下午 [Thread: main][ Class:org.apache.zookeeper.ClientCnxnSocket >> Method: org.apache.zookeeper.ClientCnxnSocket.initProperties(ClientCnxnSocket.java:237) ]
+INFO:jute.maxbuffer value is 4194304 Bytes
+2019-08-23 15:00:14 下午 [Thread: main][ Class:org.apache.zookeeper.ClientCnxn >> Method: org.apache.zookeeper.ClientCnxn.initRequestTimeout(ClientCnxn.java:1653) ]
+INFO:zookeeper.request.timeout value is 0. feature enabled=
+2019-08-23 15:00:23 下午 [Thread: main-SendThread(47.104.103.95:2181)][ Class:org.apache.zookeeper.SaslServerPrincipal >> Method: org.apache.zookeeper.SaslServerPrincipal.getServerPrincipal(SaslServerPrincipal.java:75) ]
+DEBUG:Canonicalized address to 47.104.103.95
+2019-08-23 15:00:23 下午 [Thread: main-SendThread(47.104.103.95:2181)][ Class:org.apache.zookeeper.ClientCnxn >> Method: org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1112) ]
+INFO:Opening socket connection to server 47.104.103.95/47.104.103.95:2181. Will not attempt to authenticate using SASL (unknown error)
+2019-08-23 15:00:23 下午 [Thread: main-SendThread(47.104.103.95:2181)][ Class:org.apache.zookeeper.ClientCnxn >> Method: org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:959) ]
+INFO:Socket connection established, initiating session, client: /10.6.129.66:56467, server: 47.104.103.95/47.104.103.95:2181
+2019-08-23 15:00:23 下午 [Thread: main-SendThread(47.104.103.95:2181)][ Class:org.apache.zookeeper.ClientCnxn >> Method: org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:1027) ]
+DEBUG:Session establishment request sent on 47.104.103.95/47.104.103.95:2181
+2019-08-23 15:00:23 下午 [Thread: main-SendThread(47.104.103.95:2181)][ Class:org.apache.zookeeper.ClientCnxn >> Method: org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1394) ]
+INFO:Session establishment complete on server 47.104.103.95/47.104.103.95:2181, sessionid = 0x1018d64b0a70019, negotiated timeout = 40000
+2019-08-23 15:00:24 下午 [Thread: main-SendThread(47.104.103.95:2181)][ Class:org.apache.zookeeper.ClientCnxn >> Method: org.apache.zookeeper.ClientCnxn$SendThread.readResponse(ClientCnxn.java:923) ]
+DEBUG:Reading reply sessionid:0x1018d64b0a70019, packet:: clientPath:null serverPath:null finished:false header:: 1,1  replyHeader:: 1,12884902062,0  request:: '/zookeeper/lock/lock-,,v{s{31,s{'world,'anyone}}},3  response:: '/zookeeper/lock/lock-0000000037 
+2019-08-23 15:00:24 下午 [Thread: main][ Class:com.zwh.utils.ZooKeeperLock >> Method: com.zwh.utils.ZooKeeperLock.lock(ZooKeeperLock.java:35) ]
+INFO:create result : /zookeeper/lock/lock-0000000037
+2019-08-23 15:00:24 下午 [Thread: main-SendThread(47.104.103.95:2181)][ Class:org.apache.zookeeper.ClientCnxn >> Method: org.apache.zookeeper.ClientCnxn$SendThread.readResponse(ClientCnxn.java:923) ]
+DEBUG:Reading reply sessionid:0x1018d64b0a70019, packet:: clientPath:null serverPath:null finished:false header:: 2,8  replyHeader:: 2,12884902062,0  request:: '/zookeeper/lock,F  response:: v{'lock-0000000037} 
+2019-08-23 15:00:24 下午 [Thread: main][ Class:com.zwh.utils.ZooKeeperLock >> Method: com.zwh.utils.ZooKeeperLock.processLock(ZooKeeperLock.java:60) ]
+INFO:开始处理业务3秒钟。。。
+2019-08-23 15:00:27 下午 [Thread: main][ Class:com.zwh.utils.ZooKeeperLock >> Method: com.zwh.utils.ZooKeeperLock.processLock(ZooKeeperLock.java:62) ]
+INFO:处理业务完毕。。。
+2019-08-23 15:00:27 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.ZooKeeper.close(ZooKeeper.java:1411) ]
+DEBUG:Closing session: 0x1018d64b0a70019
+2019-08-23 15:00:27 下午 [Thread: main][ Class:org.apache.zookeeper.ClientCnxn >> Method: org.apache.zookeeper.ClientCnxn.close(ClientCnxn.java:1473) ]
+DEBUG:Closing client for session: 0x1018d64b0a70019
+2019-08-23 15:00:27 下午 [Thread: main-SendThread(47.104.103.95:2181)][ Class:org.apache.zookeeper.ClientCnxn >> Method: org.apache.zookeeper.ClientCnxn$SendThread.readResponse(ClientCnxn.java:923) ]
+DEBUG:Reading reply sessionid:0x1018d64b0a70019, packet:: clientPath:null serverPath:null finished:false header:: 3,-11  replyHeader:: 3,12884902063,0  request:: null response:: null
+2019-08-23 15:00:27 下午 [Thread: main-SendThread(47.104.103.95:2181)][ Class:org.apache.zookeeper.ClientCnxn >> Method: org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1228) ]
+DEBUG:An exception was thrown while closing send thread for session 0x1018d64b0a70019 : Unable to read additional data from server sessionid 0x1018d64b0a70019, likely server has closed socket
+2019-08-23 15:00:27 下午 [Thread: main][ Class:org.apache.zookeeper.ClientCnxn >> Method: org.apache.zookeeper.ClientCnxn.disconnect(ClientCnxn.java:1449) ]
+DEBUG:Disconnecting client for session: 0x1018d64b0a70019
+2019-08-23 15:00:27 下午 [Thread: main][ Class:org.apache.zookeeper.ZooKeeper >> Method: org.apache.zookeeper.ZooKeeper.close(ZooKeeper.java:1422) ]
+INFO:Session: 0x1018d64b0a70019 closed

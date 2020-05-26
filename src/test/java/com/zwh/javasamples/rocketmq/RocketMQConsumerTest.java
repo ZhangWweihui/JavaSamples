@@ -1,5 +1,6 @@
 package com.zwh.javasamples.rocketmq;
 
+import com.zwh.utils.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
@@ -31,7 +32,7 @@ public class RocketMQConsumerTest {
     public void init(){
         try {
             consumer = new DefaultMQPushConsumer(CONSUMER_GROUP);
-            consumer.setNamesrvAddr(RocketMQProducerTest.NAMESRV);
+            consumer.setNamesrvAddr(Constants.ROCKETMQ_NAMESRV);
             consumer.subscribe(RocketMQProducerTest.TOPIC, "*");
             consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
             //consumer.setMessageModel(MessageModel.BROADCASTING);
@@ -53,6 +54,7 @@ public class RocketMQConsumerTest {
                         }
                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
+                        return ConsumeConcurrentlyStatus.RECONSUME_LATER;
                     }
                     return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
                 }

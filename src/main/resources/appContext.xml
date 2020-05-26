@@ -3,23 +3,37 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="policyInfoProducer" class="org.apache.rocketmq.client.producer.DefaultMQProducer"
-          init-method="start">
-        <property name="namesrvAddr" value="172.18.20.37:9876;172.18.20.47:9876"/>
-        <property name="producerGroup" value="policy_info_producers" />
-        <property name="sendMsgTimeout" value="3000"/>
-        <property name="instanceName" value="hshcics_policy_info_producer"/>
+    <bean id="artifactProducer" class="org.apache.rocketmq.client.producer.DefaultMQProducer" init-method="start">
+        <property name="namesrvAddr" value="47.104.103.95:9876" />
+        <property name="producerGroup" value="artifact_producers" />
+        <property name="sendMsgTimeout" value="5000" />
+        <property name="instanceName" value="artifactProducer" />
+        <property name="sendMessageWithVIPChannel" value="false" />
     </bean>
 
-    <bean id="policyInfoConsumer1" class="org.apache.rocketmq.client.consumer.DefaultMQPushConsumer">
-        <property name="namesrvAddr" value="172.18.20.37:9876;172.18.20.47:9876"/>
-        <property name="consumerGroup" value="policy_info_consumers" />
-        <property name="instanceName" value="policyInfoConsumer1"/>
+    <bean id="artifactConsumer1" class="org.apache.rocketmq.client.consumer.DefaultMQPushConsumer">
+        <property name="namesrvAddr" value="zhangweihui.com.cn:9876"/>
+        <property name="consumerGroup" value="artifact_consumers" />
+        <property name="instanceName" value="artifactConsumer1"/>
+        <property name="consumeFromWhere" value="CONSUME_FROM_FIRST_OFFSET" />
+        <property name="MessageModel" value="BROADCASTING" />
+        <property name="subscription">
+            <map>
+                <entry key="artifact_info" value="*" />
+            </map>
+        </property>
     </bean>
 
-    <bean id="policyInfoConsumer2" class="org.apache.rocketmq.client.consumer.DefaultMQPushConsumer">
-        <property name="namesrvAddr" value="172.18.20.37:9876;172.18.20.47:9876"/>
-        <property name="consumerGroup" value="policy_info_consumers" />
-        <property name="instanceName" value="policyInfoConsumer2"/>
+    <bean id="artifactConsumer2" class="org.apache.rocketmq.client.consumer.DefaultMQPushConsumer">
+        <property name="namesrvAddr" value="zhangweihui.com.cn:9876"/>
+        <property name="consumerGroup" value="artifact_consumers" />
+        <property name="instanceName" value="artifactConsumer2"/>
+        <property name="consumeFromWhere" value="CONSUME_FROM_FIRST_OFFSET" />
+        <property name="MessageModel" value="BROADCASTING" />
+        <property name="subscription">
+            <map>
+                <entry key="artifact_info" value="*" />
+            </map>
+        </property>
     </bean>
 </beans>
