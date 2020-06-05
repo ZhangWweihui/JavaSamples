@@ -1,14 +1,12 @@
 package com.zwh.javasamples.rocketmq;
 
-import io.openmessaging.MessagingAccessPoint;
-import io.openmessaging.OMS;
-import io.openmessaging.consumer.Consumer;
-import io.openmessaging.consumer.MessageListener;
-import io.openmessaging.manager.ResourceManager;
-import io.openmessaging.message.Message;
+import io.openmessaging.api.*;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Properties;
+import java.util.Set;
 
 /**
  * 使用 OpenMessaging 消费消息
@@ -21,66 +19,69 @@ public class OpenMessagingExampleConsumer {
     public void pushConsume() {
         //Load and start the vendor implementation from a specific OMS driver URL.
         final MessagingAccessPoint messagingAccessPoint =
-                OMS.getMessagingAccessPoint("oms:rocketmq://localhost:10911/us-east");
+                OMS.builder()
+                        .region("Shenzhen")
+                        .endpoint("127.0.0.1:9876")
+                        .driver("rocketmq")
+                        .withCredentials(new Properties())
+                        .build();
 
-        //Fetch a ResourceManager to create Queue resource.
-        ResourceManager resourceManager = messagingAccessPoint.resourceManager();
-        resourceManager.createNamespace("NS://XXXX");
-        final Consumer consumer = messagingAccessPoint.createConsumer();
+        Properties properties = new Properties();
+        final Consumer consumer = messagingAccessPoint.createConsumer(properties);
         consumer.start();
 
         //Register a shutdown hook to close the opened endpoints.
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
             public void run() {
-                consumer.stop();
+                consumer.shutdown();
             }
         }));
 
         //Consume messages from a simple queue.
-        String simpleQueue = "NS://HELLO_QUEUE";
-        resourceManager.createQueue(simpleQueue);
-        //This queue doesn't has a source queue, so only the message delivered to the queue directly can
-        //be consumed by this consumer.
-        consumer.bindQueue(Arrays.asList(simpleQueue), new MessageListener() {
-            @Override
-            public void onReceived(Message message, Context context) {
-                System.out.println("Received one message: " + message);
-                context.ack();
-            }
+        String topic = "NS://HELLO_TOPIC";
 
+        consumer.subscribe(topic, "*", new MessageListener(){
+            @Override
+            public Action consume(Message message, ConsumeContext context) {
+
+                return Action.CommitMessage;
+            }
         });
 
-        consumer.unbindQueue(Arrays.asList(simpleQueue));
-
-        consumer.stop();
+        consumer.shutdown();
     }
 
     @Test
     public void pullConsume() {
         //Load and start the vendor implementation from a specific OMS driver URL.
         final MessagingAccessPoint messagingAccessPoint =
-                OMS.getMessagingAccessPoint("oms:rocketmq://alice@rocketmq.apache.org/us-east");
+                OMS.builder()
+                        .endpoint("http://mq-instance-xxx-1234567890-test:8080")
+                        .region("Shenzhen")
+                        .driver("rocketmq")
+                        .build();
 
+        Properties properties = new Properties();
         //Start a PullConsumer to receive messages from the specific queue.
-        final PullConsumer consumer = messagingAccessPoint.createPullConsumer();
+        final PullConsumer consumer = messagingAccessPoint.createPullConsumer(properties);
 
         //Register a shutdown hook to close the opened endpoints.
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
             public void run() {
-                consumer.stop();
+                consumer.shutdown();
             }
         }));
 
-        consumer.bindQueue(Arrays.asList("NS://HELLO_QUEUE"));
+        Set<TopicPartition> topicPartitions = consumer.topicPartitions("NS://TOPIC");
+        consumer.assign(topicPartitions);
         consumer.start();
 
-        Message message = consumer.receive(1000);
+        List<Message> message = consumer.poll(1000);
         System.out.println("Received message: " + message);
         //Acknowledge the consumed message
-        consumer.ack(message.getMessageReceipt());
-        consumer.stop();
-
+        consumer.commitSync();
+        consumer.shutdown();
     }
 }
