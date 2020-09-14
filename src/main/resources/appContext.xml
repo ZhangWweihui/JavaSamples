@@ -36,4 +36,16 @@
             </map>
         </property>
     </bean>
+
+
+<!--    <bean id="userFactoryBean" class="com.zwh.model.User.UserFactory"/>-->
+    <bean id="user" name="user1,user2,user3" class="com.zwh.model.User.UserFactory2"/>
+
+    <alias name="user1" alias="user3,user4,user5"/>
+
+    <bean id="jsonRuleConfigParser" class="com.zwh.designpattern.factory.JsonRuleConfigParser"/>
+    <bean id="propertiesRuleConfigParser" class="com.zwh.designpattern.factory.PropertiesRuleConfigParser"/>
+    <bean id="xmlRuleConfigParser" class="com.zwh.designpattern.factory.XmlRuleConfigParser"/>
+    <bean id="yamlRuleConfigParser" class="com.zwh.designpattern.factory.YamlRuleConfigParser"/>
+
 </beans>
